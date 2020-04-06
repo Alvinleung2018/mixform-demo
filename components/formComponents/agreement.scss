@@ -1,0 +1,42 @@
+.container {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 100px;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: #fff;
+}
+
+.content {
+  width: 550px;
+  height: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+}
+
+.group {
+  position: relative;
+  right: 100px;
+}
+
+.radioStyle {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 30px
+}
+
+.text {
+  color: #46BEF4;
+}
+
+.returnBtn {
+  margin-right: 20px;
+}
+
+.nextBtn {
+  margin-left: 20px;
+}
