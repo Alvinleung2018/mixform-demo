@@ -1,21 +1,47 @@
-import React from 'react';
-import Head from "./header";
-import ContentExt from "./content";
-import FooterExt from "./footer";
+import React from 'react'
+import PropTypes from 'prop-types';
+import { Layout, ConfigProvider } from 'antd'
+import {
+    MenuUnfoldOutlined,
+    MenuFoldOutlined,
+    UserOutlined,
+    VideoCameraOutlined,
+    UploadOutlined,
+} from '@ant-design/icons';
 
-import {Layout} from "antd";
+import Header from "./header";
+import Sider from "./sider";
+import Content from "./content";
+import css from './layout.scss'
 
-export default class LayoutExt extends React.Component {
+
+
+class AuthLayout extends React.Component {
+
+    state = {
+        collapsed: false,
+    };
+
+    handleCollapse = () => {
+        this.setState({
+            collapsed: !this.state.collapsed,
+        });
+    };
+
     render() {
-        const {children} = this.props
-        console.log(this.props)
+        const {Component} = this.props
+        const {collapsed} = this.state
         return (
-           <Layout>
-               <Head />
-               <ContentExt children={children}>
-               </ContentExt>
-               <FooterExt />
-           </Layout>
-       )
+            <Layout className={css.layoutContainer}>
+                <Sider collapsed={collapsed} />
+                <Layout>
+                    <Header collapsed={collapsed} onCollapse={this.handleCollapse} />
+                    <Content Component={Component} />
+                </Layout>
+            </Layout>
+        )
     }
 }
+
+
+export default AuthLayout

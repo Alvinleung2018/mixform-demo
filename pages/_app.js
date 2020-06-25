@@ -1,23 +1,32 @@
 import React from 'react'
 import Head from 'next/head'
 import App, {Container} from 'next/app'
-import LayoutExt from "../components/layout/layout";
-import 'antd/dist/antd.css';
-import './style.css'
 
-class MerchantSigningSystem extends App {
+import 'antd/dist/antd.css';
+import '../mock'
+import AuthLayout from "../components/layout/layout";
+
+
+class DataSystemApp extends React.Component {
     render() {
-        const {Component, pageProps} = this.props;
-        console.log(this.props)
-        console.log(this.props.pageProps)
+        const {Component} = this.props;
         return (
-            <Container>
-                <LayoutExt>
-                    <Component {...pageProps} />
-                </LayoutExt>
-            </Container>
+            <React.Fragment>
+                <Head>
+                    <meta content="text/html;charset=UTF-8"/>
+                    <meta name="applicable-device" content="pc,mobile"/>
+                    <meta content="width=device-width,initial-scale=1,user-scalable=no"
+                          name="viewport"/>
+                    <title>DataSystem</title>
+                    <style>
+                        {"#__next {height:100%; width: 100%;background-color: #fff;};"}
+                    </style>
+                </Head>
+                <AuthLayout Component={Component} />
+
+            </React.Fragment>
         )
     }
 }
 
-export default MerchantSigningSystem;
+export default DataSystemApp

@@ -1,15 +1,18 @@
-import { Layout} from 'antd';
+import React from "react";
+import { Layout } from "antd";
+
+
 const { Content } = Layout;
 
-
-class ContentExt extends React.Component{
+class LayoutContent extends React.Component{
     render() {
-        const {children} = this.props;
-        // console.log(this.props)
+        const {Component} = this.props
         return (
-            <Content children={children}/>
+            <Content>
+                <Component />
+            </Content>
         )
     }
 }
 
-export default ContentExt
+export default LayoutContent
