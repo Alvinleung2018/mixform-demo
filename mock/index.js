@@ -10,7 +10,7 @@ import menuAPI from './menu'
 // });
 
 
-Mock.mock('/api/menu?id=1', 'get', menuAPI.menuInfo)
+Mock.mock('/api/menu', 'get', menuAPI.menuInfo)
 Mock.mock('/api/adduser', 'post', menuAPI.addUser)
 
 

@@ -9,6 +9,7 @@ import {
 } from '@ant-design/icons';
 
 import css from './header.scss'
+import BreadCrumb from "./breadCrumb/breadCrumb";
 
 const { Header } = Layout;
 
@@ -24,6 +25,7 @@ class LayoutHeader extends React.Component{
                         :
                         <MenuFoldOutlined className={css.trigger} onClick={onCollapse} />
                 }
+                <span><BreadCrumb /></span>
             </Header>
         )
     }

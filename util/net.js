@@ -5,7 +5,7 @@ const request = axios.create({
     timeout: 5000
 })
 
-export const get  = (url, params) => {
+export const get  = (url, params = {}) => {
     return request({
         url: url,
         method: 'get',

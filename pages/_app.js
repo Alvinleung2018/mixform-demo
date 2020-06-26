@@ -5,6 +5,7 @@ import App, {Container} from 'next/app'
 import 'antd/dist/antd.css';
 import '../mock'
 import AuthLayout from "../components/layout/layout";
+import Application from "../components/frame/application";
 
 
 class DataSystemApp extends React.Component {
@@ -22,7 +23,8 @@ class DataSystemApp extends React.Component {
                         {"#__next {height:100%; width: 100%;background-color: #fff;};"}
                     </style>
                 </Head>
-                <AuthLayout Component={Component} />
+                {/*<AuthLayout Component={Component} />*/}
+                <Application Component={Component} />
 
             </React.Fragment>
         )
