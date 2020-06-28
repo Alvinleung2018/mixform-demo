@@ -5,7 +5,7 @@ import css from './style.scss'
 
 
 const AxisLineCharts = ({data, position, color, Xname, Yname}) => {
-    console.log(data, position, color, Xname, Yname)
+    console.dir(data)
     return (
        <div className={css.lineContainer}>
            <h1>六月</h1>

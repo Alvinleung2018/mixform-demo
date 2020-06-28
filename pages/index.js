@@ -5,6 +5,7 @@ import {Button} from "antd";
 import ChartsController from "../components/charts/chartsController";
 import Dy from "../components/charts/controler";
 import JulChart from "../components/stockIndex/ShanghaiIndex/year2020/Jul";
+import MixTable from "../components/table/mixTable";
 
 class Index extends React.Component{
 
@@ -26,6 +27,7 @@ class Index extends React.Component{
         return (
             <div>
                 <JulChart />
+                <MixTable />
             </div>
         )
     }

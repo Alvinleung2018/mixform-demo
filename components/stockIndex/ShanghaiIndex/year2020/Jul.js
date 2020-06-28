@@ -48,6 +48,40 @@ const data = createObj('day', 'capital','role',['main forces', 'retail investors
 //     },
 // ]
 
+const a = [
+    {
+        id: 1,
+        fundCode: "110022",
+        fundName: "易方达消费行业股票",
+        fundType: "股票型",
+        fundSize: [
+            {
+                quarter: '2018-03',
+                size: '172.08',
+                program: '基金规模'
+            },
+            {
+                quarter: '2018-06',
+                size: '168.73',
+                program: '基金规模'
+            },
+            {
+                quarter: '2018-09',
+                size: '158.47',
+                program: '基金规模'
+            },
+            {
+                quarter: '2018-12',
+                size: '136.71',
+                program: '基金规模'
+            },
+        ]
+    }
+]
+
+// console.log(JSON.parse(a))
+// a[0].fundSize[0]
+
 const Chart = dynamic(import('../../../charts/lineCharts/axisLineCharts'), {
     loading: () => <p>...</p>,
     ssr: false
@@ -56,6 +90,8 @@ const Chart = dynamic(import('../../../charts/lineCharts/axisLineCharts'), {
 
 class JulChart extends React.Component {
     render() {
+        // console.log((JSON.parse(a)))
+        console.log(data)
         return(
             <Chart data={data} position={'day*capital'} color={'role'} Xname={'day'} Yname={'capital'} />
         )
