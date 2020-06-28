@@ -6,15 +6,12 @@ import css from './login.scss'
 
 class Login extends React.Component {
 
-    handleFinish = values => {
-        console.log(values)
-    }
-
     render() {
+        const {onFinish} = this.props
         return(
             <div>
                 <Form className={css.form}
-                      onFinish={this.handleFinish}
+                      onFinish={onFinish}
                 >
                     <div>
                         <h2 className={css.title}>用户登录</h2>

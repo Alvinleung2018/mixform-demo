@@ -1,41 +1,34 @@
 import React from 'react'
+import {withRouter} from 'next/router'
 import {Button} from "antd";
-// import "../mock"
 
-import {getMenu, createUser} from "../data/requstUrl";
-import menuAPI from "../mock/menu"
-import axios from 'axios'
-
+import ChartsController from "../components/charts/chartsController";
+import Dy from "../components/charts/controler";
+import JulChart from "../components/stockIndex/ShanghaiIndex/year2020/Jul";
 
 class Index extends React.Component{
 
+    state = {
+        code: ''
+    }
+
     componentDidMount() {
-        // getMenu().then(res => {
-        //     console.log(res)
-        // })
-        console.log(menuAPI)
-        const id = 1
-        // axios.get('/api/menu', {
-        //     params: {
-        //         id: id
-        //     },
-        //     headers: {'Content-type': 'application/json'}
-        // }).then(res => {
-        //     console.log(res)
-        // })
-        createUser(1,'xiaoxiao','18').then(res=> {
-            console.log(res)
-        })
+        // console.log(this.props)
+        // const {router} = this.props;
+        // const patch = router.asPath.match(/code=[0-9a-zA-Z]+/)[0];
+        // const code = patch.split('=')[1];
+        // console.log(code)
+        // this.setState({code})
     }
 
     render() {
+        console.log(this.state.code)
         return (
             <div>
-                <Button>123</Button>
-                <img src="/static/icon2.png" alt=""/>
+                <JulChart />
             </div>
         )
     }
 }
 
-export default Index
+export default withRouter(Index)

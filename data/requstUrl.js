@@ -1,6 +1,14 @@
 import {get, post} from "../util/net";
 
 
+export const userLogin = (username, password) => {
+    return post('/api/login', {
+        username,
+        password
+    })
+}
+
+
 export const getMenu = () => {
     return get('/api/menu')
 }

@@ -1,6 +1,7 @@
 import Mock from "mockjs";
 
 import menuAPI from './menu'
+import loginAPI from './login'
 
 // mockFetch(Mock);
 
@@ -12,6 +13,7 @@ import menuAPI from './menu'
 
 Mock.mock('/api/menu', 'get', menuAPI.menuInfo)
 Mock.mock('/api/adduser', 'post', menuAPI.addUser)
+Mock.mock('/api/login', 'post', loginAPI.login)
 
 
 export default Mock

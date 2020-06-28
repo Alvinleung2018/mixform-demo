@@ -46,7 +46,7 @@ module.exports = withCSS(withSass({
             }
             return entries
         };
-        //解析图片，图片位置放static目录下
+        // 解析图片，图片位置放static目录下
         config.module.rules.push({
             test: /\.(png|jpg|gif)$/,
             use: [
