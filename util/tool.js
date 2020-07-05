@@ -1,13 +1,13 @@
-const createObj = (keyX, keyY, role, roleArr, arrX, arrY) => {
+export const createObj = (keyX, keyY, role, roleArr, arrX, arrY) => {
     const arr = []
     const arr2 = []
     for (let i = 0; i < arrX.length; i++) {
         let obj = {}
         let obj2 = {}
         obj[keyX] = arrX[i]
-        // obj2[keyX] = arrX[i]
-        // obj[role] = roleArr[0]
-        // obj2[role] = roleArr[1]
+        obj2[keyX] = arrX[i]
+        obj[role] = roleArr[0]
+        obj2[role] = roleArr[1]
         console.log('!!!',arrX[i])
         arr.push(obj, obj2)
         console.log(arr)

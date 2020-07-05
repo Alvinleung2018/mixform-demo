@@ -6,6 +6,7 @@ import ChartsController from "../components/charts/chartsController";
 import Dy from "../components/charts/controler";
 import JulChart from "../components/stockIndex/ShanghaiIndex/year2020/Jul";
 import MixTable from "../components/table/mixTable";
+import ComprehensiveFlow from "../components/moneyFlow/comprehensiveFlow/comprehensiveFlow";
 
 class Index extends React.Component{
 
@@ -26,8 +27,9 @@ class Index extends React.Component{
         console.log(this.state.code)
         return (
             <div>
-                <JulChart />
-                <MixTable />
+                {/*<JulChart />*/}
+                {/*<MixTable />*/}
+                <ComprehensiveFlow />
             </div>
         )
     }
