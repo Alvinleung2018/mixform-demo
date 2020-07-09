@@ -3,9 +3,7 @@ import { Chart, Axis, Geom, Tooltip, Legend } from 'bizcharts';
 
 import css from './style.scss'
 
-
-const AxisLineCharts = ({data, position, color, Xname, Yname}) => {
-    console.dir(data)
+const AxisLineCharts = ({data, position, color, Xname, Yname, label = {formatter: val => `${val}亿`}}) => {
     return (
         <>
             <h1>六月</h1>
@@ -13,9 +11,7 @@ const AxisLineCharts = ({data, position, color, Xname, Yname}) => {
                 <Chart data={data} autoFit>
                     <Axis name={Xname} />
                     <Axis name={Yname}
-                          label={{
-                              formatter: val => `${val}亿`,
-                          }}
+                          label={label}
                     />
                     <Tooltip
                         crosshairs={{

@@ -3,8 +3,9 @@ import {withRouter} from 'next/router'
 import {Button} from "antd";
 
 import ChartsController from "../components/charts/chartsController";
-import Dy from "../components/charts/controler";
-import JulChart from "../components/stockIndex/ShanghaiIndex/year2020/Jul";
+// import Dy from "../components/charts/controler";
+import ChartControler from "../components/moneyFlow/charts/controler";
+// import JulChart from "../components/stockIndex/ShanghaiIndex/year2020/Jul";
 import MixTable from "../components/table/mixTable";
 import ComprehensiveFlow from "../components/moneyFlow/comprehensiveFlow/comprehensiveFlow";
 
@@ -29,6 +30,7 @@ class Index extends React.Component{
             <div>
                 {/*<JulChart />*/}
                 {/*<MixTable />*/}
+                <ChartControler indexType={'ShangHaiIndex'}  program={"mainFlow"} />
                 <ComprehensiveFlow />
             </div>
         )
