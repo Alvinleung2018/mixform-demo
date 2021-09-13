@@ -15,3 +15,11 @@ export const submitOtherMsg = (data: any) => {
         message.success('提交成功')
     })
 }
+
+export const submitAccountMsg = (data: any) => {
+    return new Promise((resolve, reject) => {
+        resolve(data)
+        notification.success({message: '账户信息', description: JSON.stringify(data)})
+        message.success('提交成功')
+    })
+}

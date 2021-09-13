@@ -18,6 +18,14 @@ const defaultState = fromJS({
         openAccountDate: '2021-01-01',
         closeAccountDate: '2021-02-01',
         riskLevel: '',
+    },
+    accountMsgData: {
+        accountType: '',
+        accountName: '',
+        accountAddress: '',
+        transactionLimitExpirationDate: '2021-01-01',
+        transactionLimitAuthDate: '2021-01-01',
+        settlementMethod: ''
     }
 })
 

@@ -10,7 +10,8 @@ export const otherMsgRequireNameNameList = [
 
 export const allFormList: string[] = [
     "holderMsg",
-    "otherMsg"
+    "otherMsg",
+    "accountMsg"
 ]
 
 export const requireNameObj = {
@@ -21,5 +22,9 @@ export const requireNameObj = {
     otherMsg: [
         'riskDisclosure',
         'witness'
+    ],
+    accountMsg: [
+        'accountType',
+        'accountName'
     ]
 }

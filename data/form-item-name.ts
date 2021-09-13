@@ -16,6 +16,11 @@ export const otherMsgNameList: string[] = [
     'riskLevel'
 ]
 
-export const allFormNameList: string[] = [
-
+export const accountMsgNameList: string[] = [
+    'accountType',
+    'accountName',
+    'accountAddress',
+    'transactionLimitExpirationDate',
+    'transactionLimitAuthDate',
+    'settlementMethod'
 ]
