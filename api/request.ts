@@ -23,3 +23,19 @@ export const submitAccountMsg = (data: any) => {
         message.success('提交成功')
     })
 }
+
+export const submitTextFormPhone = (data: any) => {
+    return new Promise((resolve, reject) => {
+        resolve(data)
+        notification.success({message: 'phone表格', description: JSON.stringify(data)})
+        message.success('提交成功')
+    })
+}
+
+export const submitTextFormEmail = (data: any) => {
+    return new Promise((resolve, reject) => {
+        resolve(data)
+        notification.success({message: 'email表格', description: JSON.stringify(data)})
+        message.success('提交成功')
+    })
+}

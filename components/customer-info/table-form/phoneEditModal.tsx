@@ -1,18 +1,26 @@
 import React from "react";
 import {Modal, Input, Form, Select} from "antd";
 import {areaCodeList, isDefaultList} from "../../../data/select-data";
+import handler from "../../../pages/api/hello";
 
 const {Item} = Form
 const {Option} = Select
 
-const PhoneEditModal = ({children, visible, title, handleCancel, handleOk}) => {
+const PhoneEditModal = ({children, visible, title, handleCancel, onOk, mode}) => {
 
     const [form] = Form.useForm()
 
-    return (
-        <>
-            <Modal visible={visible} onCancel={handleCancel} onOk={handleOk} title={title}>
-                <Form form={form}>
+    function handlerOk() {
+        const value = form.getFieldsValue()
+        onOk(value)
+    }
+
+    let Comp = null;
+
+    switch (mode) {
+        case 'phone':
+            Comp = (
+                <>
                     <Item label="区号" name="areaCode">
                         <Select>
                             {
@@ -34,6 +42,30 @@ const PhoneEditModal = ({children, visible, title, handleCancel, handleOk}) => {
                             }
                         </Select>
                     </Item>
+                </>
+            )
+            break;
+        case 'email':
+            Comp = (
+                <>
+                    <Item label="邮箱" name="email">
+                        <Input />
+                    </Item>
+                    <Item label="默认" name="emailIsDefault">
+                        <Input />
+                    </Item>
+                </>
+            )
+            break;
+        default:
+            Comp = null
+    }
+
+    return (
+        <>
+            <Modal visible={visible} onCancel={handleCancel} onOk={handlerOk} title={title}>
+                <Form form={form}>
+                    {Comp}
                 </Form>
             </Modal>
             {children}

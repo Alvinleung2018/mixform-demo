@@ -31,5 +31,29 @@ export const useCustomerInfo = () => {
         })
     }
 
-    return {holderMsgData, otherMsgData, accountMsgData, updateHolderMsgData, updateOtherMsgData, updateAccountMsgData}
+    // 实时更新手机号表单
+    const updatePhoneTableData = (data: any) => {
+        dispatch({
+            type: 'customerInfo/update/phoneTableData',
+            data
+        })
+    }
+
+    // 实时更新邮箱表单
+    const updateEmailTableData = (data: any) => {
+        dispatch({
+            type: 'customerInfo/update/emailTableData',
+            data
+        })
+    }
+
+    return {
+        holderMsgData,
+        otherMsgData, accountMsgData,
+        updateHolderMsgData,
+        updateOtherMsgData,
+        updateAccountMsgData,
+        updatePhoneTableData,
+        updateEmailTableData
+    }
 }

@@ -1,5 +1,6 @@
 import { fromJS } from 'immutable';
 import {actionType} from "./types";
+import eventBus from "../../../utils/eventbus";
 
 const defaultState = fromJS({
     form_key: 'customer_info',
@@ -26,10 +27,36 @@ const defaultState = fromJS({
         transactionLimitExpirationDate: '2021-01-01',
         transactionLimitAuthDate: '2021-01-01',
         settlementMethod: ''
+    },
+    phoneTableData: {
+        key: '',
+        areaCode: '',
+        phoneNumber: '',
+        isDefault: '',
+    },
+    emailTableData: {
+        email: '',
+        isDefault: ''
+    },
+    textForm: {
+        phoneTableData : [
+            {
+                areaCode: '',
+                phoneNumber: '',
+                isDefault: '',
+            }
+        ],
+        emailTableData: [
+            {
+                email: '',
+                isDefault: ''
+            }
+        ]
     }
 })
 
 const customerInfoReducer = (state = defaultState, action: actionType) => {
+    eventBus.addListener()
     switch (action.type) {
         case 'customerInfo/update/holderMsgData':
             // @ts-ignore
@@ -37,6 +64,15 @@ const customerInfoReducer = (state = defaultState, action: actionType) => {
         case 'customerInfo/update/otherMsgData':
             // @ts-ignore
             return state.set('otherMsgData', action.data)
+        case 'customerInfo/update/accountMsgData':
+            // @ts-ignore
+            return state.set('accountMsgData', action.data)
+        case 'customerInfo/update/phoneTableData':
+            // @ts-ignore
+            return state.setIn(['textForm', 'phoneTableData'], action.data)
+        case 'customerInfo/update/emailTableData':
+            // @ts-ignore
+            return state.setIn(['textForm', 'emailTableData'], action.data)
         default:
             return state
     }

@@ -24,3 +24,14 @@ export const accountMsgNameList: string[] = [
     'transactionLimitAuthDate',
     'settlementMethod'
 ]
+
+export const phoneTableNameList: string[] = [
+    'areaCode',
+    'phoneNumber',
+    'isDefault',
+]
+
+export const emailTableNameList: string[] = [
+    'email',
+    'emailIsDefault',
+]

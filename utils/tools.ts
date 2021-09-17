@@ -35,5 +35,3 @@ export const formatDate = (value: any) => {
     }
     return { ...value, ...obj}
 }
-
-
